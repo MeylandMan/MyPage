@@ -24,20 +24,18 @@
             padding: 0.5rem 1rem;
         }
 
-        .container-pc {
+        .nav-wrap {
             display: flex;
             justify-content: space-between;
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
         }
-
-        /* Navigation gauche */
-
+        
         .nav-left {
             list-style-type: none;
             display: flex;
-            gap: 10rem;
+            gap: 15rem;
         }
 
         .nav-left li {
@@ -61,23 +59,17 @@
             border-radius: 8px;
         }
         
-        /* Navigation droite */
+
         .nav-right {
             list-style-type: none;
             display: flex;
-            gap: 1rem;
+            gap: 2rem;
         }
 
-        .nav-right li a {
-            text-decoration: none;
-            color: white;
-            font-size: 1rem;
-            transition: color 0.3s ease;
+        .nav-right li a img{
+            width: 32px;
         }
 
-        .nav-right li a:hover {
-            color: #ddd;
-        }
     </style>
     <title>M.Meyland</title>
 </head>
@@ -100,10 +92,14 @@
             
             <ul class="nav-right">
                 <li class="social">
-                    <a href="https://www.youtube.com/@dunno_man0" target="_blank">YouTube</a>
+                    <a href="https://www.youtube.com/@dunno_man0" target="_blank">
+                        <img src="youtube-logo.png" alt="Meyland's Youtube page">
+                    </a>
                 </li>
                 <li class="social">
-                    <a href="https://twitter.com/Dunno_man0" target="_blank">Twitter</a>
+                    <a href="https://twitter.com/Dunno_man0" target="_blank">
+                        <img src="twitter-logo.png" alt="Meyland's Twitter page">
+                    </a>
                 </li>
             </ul>
         </nav>

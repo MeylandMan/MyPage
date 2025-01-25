@@ -32,6 +32,10 @@
             margin: 0 auto;
         }
 
+        .container-none {
+            display: none;
+        }
+
         .container-pc .nav-wrap {
             display: flex;
             justify-content: space-between;
@@ -84,7 +88,7 @@
 
 <body>
 <header>
-    <nav class="container-pc">
+    <nav class="container-pc" id="pc">
         <nav class="nav-wrap">
             <ul class="nav-left">
                 <li class="page-li" id="logo">
@@ -113,7 +117,7 @@
         </nav>
     </nav>
 
-    <nav class="container-mobile"></nav>
+    <nav class="container-mobile" id="mobile"></nav>
 </header>
 
 <footer>
@@ -126,21 +130,31 @@
         if (window.innerWidth < 1000) {
             navElement.classList.remove('container-pc');
             navElement.classList.add('container');
+
+            const containerElement = document.querySelector('#pc');
+            const mobileElement = document.querySelector('#mobile');
+
+            if (window.innerWidth <= 910) {
+                containerElement.classList.remove('container');
+                containerElement.classList.add('container-none');
+
+                mobileElement.classList.remove('container-none');
+                mobileElement.classList.add('container-mobile');
+            } else {
+                mobileElement.classList.remove('container-mobile');
+                mobileElement.classList.add('container-none');
+
+                containerElement.classList.remove('container-none');
+                containerElement.classList.add('container');
+            }
+
         } else {
             navElement.classList.remove('container');
             navElement.classList.add('container-pc');
         }
 
-        const container = document.querySelector('.container');
-        const containerMobile = document.querySelector('.container-mobile');
         
-        if (window.innerWidth <= 910) {
-            container.style.display = 'none';
-            containerMobile.style.display = 'flex';
-        } else {
-            container.style.display = 'flex';
-            containerMobile.style.display = 'none';
-        }
+        
     }
 
     window.addEventListener('load', updateClassBasedOnWidth);

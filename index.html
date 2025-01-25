@@ -17,7 +17,7 @@
         body {
             font-family: Arial, sans-serif;
         }
-        
+
         header {
             background-color: #333;
             color: white;
@@ -31,7 +31,33 @@
             max-width: 1200px;
             margin: 0 auto;
         }
+/* Navigation gauche */
+        .nav-left {
+            list-style-type: none;
+            display: flex;
+            gap: 1rem;
+        }
 
+        .nav-left li {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-left li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-left li a:hover {
+            color: #ddd;
+        }
+
+        .nav-left li img {
+            vertical-align: middle;
+            border-radius: 8px;
+        }
         
 
     </style>

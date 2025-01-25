@@ -24,7 +24,15 @@
             padding: 0.5rem 1rem;
         }
 
-        .nav-wrap {
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container-pc .nav-wrap {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -35,7 +43,7 @@
         .nav-left {
             list-style-type: none;
             display: flex;
-            gap: 15rem;
+            gap: 12.5rem;
         }
 
         .nav-left li {
@@ -46,7 +54,7 @@
         .nav-left li a {
             text-decoration: none;
             color: white;
-            font-size: 1rem;
+            font-size: 1.5rem;
             transition: color 0.3s ease;
         }
 
@@ -63,7 +71,7 @@
         .nav-right {
             list-style-type: none;
             display: flex;
-            gap: 2rem;
+            gap: 1rem;
         }
 
         .nav-right li a img{
@@ -111,5 +119,32 @@
 <footer>
 </footer>
 </body>
+
+<script>
+    function updateClassBasedOnWidth() {
+        const navElement = document.querySelector('nav');
+        if (window.innerWidth < 1000) {
+            navElement.classList.remove('container-pc');
+            navElement.classList.add('container');
+        } else {
+            navElement.classList.remove('container');
+            navElement.classList.add('container-pc');
+        }
+
+        const container = document.querySelector('.container');
+        const containerMobile = document.querySelector('.container-mobile');
+        
+        if (window.innerWidth <= 910) {
+            container.style.display = 'none';
+            containerMobile.style.display = 'flex';
+        } else {
+            container.style.display = 'flex';
+            containerMobile.style.display = 'none';
+        }
+    }
+
+    window.addEventListener('load', updateClassBasedOnWidth);
+    window.addEventListener('resize', updateClassBasedOnWidth);
+</script>
 
 </html>

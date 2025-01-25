@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.Meyland</title>
     <link rel="icon" type="image/jpg" href="LOGO-SMALL.png">
     <link rel="stylesheet" href="style.css">
     <style>
@@ -50,7 +51,7 @@
             gap: 12.5rem;
         }
 
-        .nav-left li {
+        .page-li {
             display: flex;
             align-items: center;
         }
@@ -83,7 +84,42 @@
         }
 
     </style>
-    <title>M.Meyland</title>
+    <script>
+        function updateClassBasedOnWidth() {
+            const navElement = document.querySelector('nav');
+            if (window.innerWidth < 1000) {
+                navElement.classList.remove('container-pc');
+                navElement.classList.add('container');
+    
+                const containerElement = document.querySelector('#pc');
+                const mobileElement = document.querySelector('#mobile');
+    
+                if (window.innerWidth <= 910) {
+                    containerElement.classList.remove('container');
+                    containerElement.classList.add('container-none');
+    
+                    mobileElement.classList.remove('container-none');
+                    mobileElement.classList.add('container-mobile');
+                } else {
+                    mobileElement.classList.remove('container-mobile');
+                    mobileElement.classList.add('container-none');
+    
+                    containerElement.classList.remove('container-none');
+                    containerElement.classList.add('container');
+                }
+    
+            } else {
+                navElement.classList.remove('container');
+                navElement.classList.add('container-pc');
+            }
+    
+            
+            
+        }
+    
+        window.addEventListener('load', updateClassBasedOnWidth);
+        window.addEventListener('resize', updateClassBasedOnWidth);
+    </script>
 </head>
 
 <body>
@@ -117,48 +153,26 @@
         </nav>
     </nav>
 
-    <nav class="container-mobile" id="mobile"></nav>
+    <nav class="container-none" id="mobile">
+        <nav>
+            <ul>
+                <li class="page-li">
+                    <a href="index.html">
+                        <img src="LOGO-2.png" alt="Home button" width="64px">
+                    </a>
+                </li>
+                <li class="page-li">
+                    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+                </li>
+            </ul>
+            
+        </nav>
+        
+    </nav>
 </header>
 
 <footer>
 </footer>
 </body>
-
-<script>
-    function updateClassBasedOnWidth() {
-        const navElement = document.querySelector('nav');
-        if (window.innerWidth < 1000) {
-            navElement.classList.remove('container-pc');
-            navElement.classList.add('container');
-
-            const containerElement = document.querySelector('#pc');
-            const mobileElement = document.querySelector('#mobile');
-
-            if (window.innerWidth <= 910) {
-                containerElement.classList.remove('container');
-                containerElement.classList.add('container-none');
-
-                mobileElement.classList.remove('container-none');
-                mobileElement.classList.add('container-mobile');
-            } else {
-                mobileElement.classList.remove('container-mobile');
-                mobileElement.classList.add('container-none');
-
-                containerElement.classList.remove('container-none');
-                containerElement.classList.add('container');
-            }
-
-        } else {
-            navElement.classList.remove('container');
-            navElement.classList.add('container-pc');
-        }
-
-        
-        
-    }
-
-    window.addEventListener('load', updateClassBasedOnWidth);
-    window.addEventListener('resize', updateClassBasedOnWidth);
-</script>
 
 </html>

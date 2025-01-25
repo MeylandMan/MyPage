@@ -31,11 +31,13 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-/* Navigation gauche */
+
+        /* Navigation gauche */
+
         .nav-left {
             list-style-type: none;
             display: flex;
-            gap: 1rem;
+            gap: 10rem;
         }
 
         .nav-left li {
@@ -59,7 +61,23 @@
             border-radius: 8px;
         }
         
+        /* Navigation droite */
+        .nav-right {
+            list-style-type: none;
+            display: flex;
+            gap: 1rem;
+        }
 
+        .nav-right li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-right li a:hover {
+            color: #ddd;
+        }
     </style>
     <title>M.Meyland</title>
 </head>

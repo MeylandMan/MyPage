@@ -78,7 +78,6 @@
             vertical-align: middle;
             border-radius: 8px;
         }
-        
 
         .nav-right {
             list-style-type: none;
@@ -97,8 +96,39 @@
             font-size: 1rem;
             transition: color 0.3s ease;
         }
+
+        .menu-toggle {
+            display: block;
+            margin: 0 auto;
+            
+            color: white;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .nav-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
     </style>
     <script>
+        let toggle = false;
+
+        function toggleMenu() {
+            toggle = !toggle;
+            const navSecondElement = document.querySelector('#nav-sec');
+            if(toggle) {
+                navSecondElement.classList.remove('container-none');
+                navSecondElement.classList.add('nav-second');
+            } else {
+                navSecondElement.classList.remove('nav-second');
+                navSecondElement.classList.add('container-none');
+            }
+        }
         function updateClassBasedOnWidth() {
             //const navElement = document.querySelector('nav');
             const containerElement = document.querySelector('#pc');
@@ -174,15 +204,14 @@
         <nav class="nav-wrap">
             <ul class="nav-main">
                 <li class="page-li">
-                    <a href="index.html">
-                        <img src="LOGO-2.png" alt="Home button" width="64px">
-                    </a>
+                    <a href="index.html"><img src="LOGO-2.png" alt="Home button" width="64px"></a>
                 </li>
                 <li class="page-li">
                     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
                 </li>
             </ul>
-            <ul class="nav-second">
+    
+            <ul class="container-none" id="nav-sec">
                 <li class="page-li"><a href="index.html">Home</a></li>
                 <li class="page-li"><a href="portofolio/index.html">Portofolio</a></li>
                 <li class="page-li"><a href="contacts/index.html">Contacts</a></li>

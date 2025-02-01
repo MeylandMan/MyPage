@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M.Meyland</title>
     <link rel="icon" type="image/jpg" href="LOGO-SMALL.png">
-    <link rel="stylesheet" href="style.css">
     <style>
         /* Reset de base */
         * {
@@ -29,7 +28,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
@@ -91,17 +90,25 @@
             width: 32px;
         }
 
+        .nav-second {
+            list-style-type: none;
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
     </style>
     <script>
         function updateClassBasedOnWidth() {
-            const navElement = document.querySelector('nav');
+            //const navElement = document.querySelector('nav');
+            const containerElement = document.querySelector('#pc');
+            const mobileElement = document.querySelector('#mobile');
             if (window.innerWidth < 1000) {
-                navElement.classList.remove('container-pc');
-                navElement.classList.add('container');
+                containerElement.classList.remove('container-pc');
+                containerElement.classList.add('container');
     
-                const containerElement = document.querySelector('#pc');
-                const mobileElement = document.querySelector('#mobile');
-    
+                
+                
                 if (window.innerWidth <= 910) {
                     containerElement.classList.remove('container');
                     containerElement.classList.add('container-none');
@@ -117,14 +124,16 @@
                 }
     
             } else {
-                navElement.classList.remove('container');
-                navElement.classList.add('container-pc');
+                containerElement.classList.remove('container-none');
+                containerElement.classList.remove('container');
+                containerElement.classList.add('container-pc');
+                
+                mobileElement.classList.remove('container-mobile');
+                mobileElement.classList.add('container-none');
             }
     
-            
-            
         }
-    
+        
         window.addEventListener('load', updateClassBasedOnWidth);
         window.addEventListener('resize', updateClassBasedOnWidth);
     </script>
@@ -173,7 +182,12 @@
                     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
                 </li>
             </ul>
-            
+            <ul class="nav-second">
+                <li class="page-li"><a href="index.html">Home</a></li>
+                <li class="page-li"><a href="portofolio/index.html">Portofolio</a></li>
+                <li class="page-li"><a href="contacts/index.html">Contacts</a></li>
+                <li class="page-li"><a href="about/index.html">About</a></li>
+            </ul>
         </nav>
         
     </nav>

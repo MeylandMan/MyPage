@@ -7,6 +7,15 @@
     <title>M.Meyland</title>
     <link rel="icon" type="image/jpg" href="LOGO-SMALL.png">
     <link rel="stylesheet" href="src/style.css">
+    <script type="module" src="src/main.js"></script>
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@<0.173.0>/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@<0.173.0>/examples/jsm/"
+          }
+        }
+      </script>
     <style>
         /* Reset de base */
         * {
@@ -179,8 +188,6 @@
 </head>
 
 <body>
-    <canvas id="bg"></canvas>
-    
     <header>
         <nav class="container-pc" id="pc">
             <nav class="nav-wrap">
@@ -231,6 +238,7 @@
             
         </nav>
     </header>
+    <canvas id="bg"></canvas>
 
     <footer>
     </footer>

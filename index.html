@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M.Meyland</title>
     <link rel="icon" type="image/jpg" href="LOGO-SMALL.png">
+    <link rel="stylesheet" href="src/style.css">
     <style>
         /* Reset de base */
         * {
@@ -178,60 +179,61 @@
 </head>
 
 <body>
-<header>
-    <nav class="container-pc" id="pc">
-        <nav class="nav-wrap">
-            <ul class="nav-left">
-                <li class="page-li" id="logo">
-                    <a href="index.html">
-                        <img src="LOGO-2.png" alt="Home button" width="64px">
-                    </a>
-                </li>
-                <li class="page-li"><a href="portofolio/index.html">Portofolio</a></li>
-                <li class="page-li"><a href="contacts/index.html">Contacts</a></li>
-                <li class="page-li"><a href="about/index.html">About</a></li>
-            </ul>
-
-            
-            <ul class="nav-right">
-                <li class="social">
-                    <a href="https://www.youtube.com/@dunno_man0" target="_blank">
-                        <img src="youtube-logo.png" alt="Meyland's Youtube page">
-                    </a>
-                </li>
-                <li class="social">
-                    <a href="https://twitter.com/Dunno_man0" target="_blank">
-                        <img src="twitter-logo.png" alt="Meyland's Twitter page">
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </nav>
-
-    <nav class="container-none" id="mobile">
-        <nav class="nav-wrap">
-            <ul class="nav-main">
-                <li class="page-li">
-                    <a href="index.html"><img src="LOGO-2.png" alt="Home button" width="64px"></a>
-                </li>
-                <li class="page-li">
-                    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-                </li>
-            </ul>
+    <canvas id="bg"></canvas>
     
-            <ul class="container-none" id="nav-sec">
-                <li class="page-li"><a href="index.html">Home</a></li>
-                <li class="page-li"><a href="portofolio/index.html">Portofolio</a></li>
-                <li class="page-li"><a href="contacts/index.html">Contacts</a></li>
-                <li class="page-li"><a href="about/index.html">About</a></li>
-            </ul>
-        </nav>
-        
-    </nav>
-</header>
+    <header>
+        <nav class="container-pc" id="pc">
+            <nav class="nav-wrap">
+                <ul class="nav-left">
+                    <li class="page-li" id="logo">
+                        <a href="index.html">
+                            <img src="LOGO-2.png" alt="Home button" width="64px">
+                        </a>
+                    </li>
+                    <li class="page-li"><a href="portofolio/index.html">Portofolio</a></li>
+                    <li class="page-li"><a href="contacts/index.html">Contacts</a></li>
+                    <li class="page-li"><a href="about/index.html">About</a></li>
+                </ul>
 
-<footer>
-</footer>
+                
+                <ul class="nav-right">
+                    <li class="social">
+                        <a href="https://www.youtube.com/@dunno_man0" target="_blank">
+                            <img src="youtube-logo.png" alt="Meyland's Youtube page">
+                        </a>
+                    </li>
+                    <li class="social">
+                        <a href="https://twitter.com/Dunno_man0" target="_blank">
+                            <img src="twitter-logo.png" alt="Meyland's Twitter page">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </nav>
+
+        <nav class="container-none" id="mobile">
+            <nav class="nav-wrap">
+                <ul class="nav-main">
+                    <li class="page-li">
+                        <a href="index.html"><img src="LOGO-2.png" alt="Home button" width="64px"></a>
+                    </li>
+                    <li class="page-li">
+                        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+                    </li>
+                </ul>
+        
+                <ul class="container-none" id="nav-sec">
+                    <li class="page-li"><a href="portofolio/index.html">Portofolio</a></li>
+                    <li class="page-li"><a href="contacts/index.html">Contacts</a></li>
+                    <li class="page-li"><a href="about/index.html">About</a></li>
+                </ul>
+            </nav>
+            
+        </nav>
+    </header>
+
+    <footer>
+    </footer>
 </body>
 
 </html>

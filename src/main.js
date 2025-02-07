@@ -23,8 +23,7 @@ const controls = new OrbitControls( camera, renderer.domElement );
 document.body.appendChild( renderer.domElement );
 
 //Adding lights
-const pointLight = new THREE.PointLight(0xffffff, 100);
-pointLight.position.set(5, 5, 5);
+const pointLight = new THREE.PointLight(0xfdc056, 500);
 const ambiantLight = new THREE.AmbientLight(0xffffff);
 
 const lightHelper = new THREE.PointLightHelper(pointLight);
@@ -45,6 +44,16 @@ camera.position.z = 5;
 // Add Texture to scene
 const sceneTexture = new THREE.TextureLoader().load('../OuterSpace-Skybox.jpg');
 scene.background = sceneTexture;
+
+
+// Create the sun 
+const sunTexture = new THREE.TextureLoader().load('../sun_diffuse.png');
+const sun = new THREE.Mesh(
+	new THREE.SphereGeometry(),
+	new THREE.MeshBasicMaterial( { map: sunTexture } )
+)
+
+scene.add( sun )
 
 // Animate process
 if(!WebGL.isWebGL2Available()) {

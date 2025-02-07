@@ -55,17 +55,16 @@ const sun = new THREE.Mesh(
 
 scene.add( sun )
 
-// Animate process
+/*
 if(!WebGL.isWebGL2Available()) {
 
 	const warning = WebGL.getWebGL2ErrorMessage();
 	document.getElementById( 'container' ).appendChild( warning );
 
 }
+*/
 
 
-
-// Initiate function or other initializations here
 renderer.setAnimationLoop( () => {
 	
 	torus.rotation.x += 0.01

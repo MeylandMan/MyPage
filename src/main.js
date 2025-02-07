@@ -23,16 +23,19 @@ const loader = new GLTFLoader()
 document.body.appendChild( renderer.domElement )
 
 //Directional light
-const dirLight = new THREE.DirectionalLight(0xffffff, 100);
-dirLight.position.set(10, 5, 10);
-dirLight.target.position.set(0, 0, 0);
-scene.add(dirLight);
-scene.add(dirLight.target);
+const pointLight = new THREE.PointLight(0xffffff, 100)
+pointLight.position.set(5, 5, 5)
+const ambiantLight = new THREE.AmbientLight(0xffffff)
 
+const lightHelper = new THREE.PointLightHelper(pointLight)
+
+const gridHelp = new THREE.GridHelper(200, 50)
+
+scene.add( pointLight,  ambiantLight, lightHelper, gridHelp)
 
 // Drawing Torus
 const geometry = new THREE.TorusGeometry( 5, 1, 10, 50 )
-const material = new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true } )
+const material = new THREE.MeshStandardMaterial( { color: 0xFF6347} )
 const torus = new THREE.Mesh( geometry, material )
 
 scene.add( torus );

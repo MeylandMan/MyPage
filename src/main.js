@@ -45,7 +45,7 @@ scene.add( torus );
 camera.position.z = 5;
 
 // Add Texture to scene
-const sceneTexture = new THREE.TextureLoader().load('Public/OuterSpace-Skybox.jpg');
+const sceneTexture = new THREE.TextureLoader().load('https://canada1.discourse-cdn.com/flex035/uploads/threejs/original/3X/d/5/d521f3d75b2c5133eb2f9ac8b9d34c9753dd87c7.png');
 scene.background = sceneTexture;
 
 

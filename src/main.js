@@ -45,12 +45,12 @@ scene.add( torus );
 camera.position.z = 5;
 
 // Add Texture to scene
-const sceneTexture = new THREE.TextureLoader().load('../OuterSpace-Skybox.jpg');
+const sceneTexture = new THREE.TextureLoader().load('OuterSpace-Skybox.jpg');
 scene.background = sceneTexture;
 
 
 // Create the sun 
-const sunTexture = new THREE.TextureLoader().load('../sun_diffuse.png');
+const sunTexture = new THREE.TextureLoader().load('sun_diffuse.png');
 const sun = new THREE.Mesh(
 	new THREE.SphereGeometry(),
 	new THREE.MeshBasicMaterial( { map: sunTexture } )

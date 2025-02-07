@@ -22,40 +22,6 @@
                 navSecondElement.classList.add('container-none');
             }
         }
-        function updateClassBasedOnWidth() {
-            if (window.innerWidth < 1000) {
-                containerElement.classList.remove('container-pc');
-                containerElement.classList.add('container');
-    
-                
-                
-                if (window.innerWidth <= 910) {
-                    containerElement.classList.remove('container');
-                    containerElement.classList.add('container-none');
-    
-                    mobileElement.classList.remove('container-none');
-                    mobileElement.classList.add('container-mobile');
-                } else {
-                    mobileElement.classList.remove('container-mobile');
-                    mobileElement.classList.add('container-none');
-    
-                    containerElement.classList.remove('container-none');
-                    containerElement.classList.add('container');
-                }
-    
-            } else {
-                containerElement.classList.remove('container-none');
-                containerElement.classList.remove('container');
-                containerElement.classList.add('container-pc');
-                
-                mobileElement.classList.remove('container-mobile');
-                mobileElement.classList.add('container-none');
-            }
-    
-        }
-        
-        //window.addEventListener('load', updateClassBasedOnWidth);
-        //window.addEventListener('resize', updateClassBasedOnWidth);
     </script>
 </head>
 

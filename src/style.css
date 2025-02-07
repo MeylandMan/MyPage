@@ -85,13 +85,12 @@ header li a {
 }
 
 .menu-toggle {
-    display: block;
     margin: 0 auto;
     
     color: white;
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: 32px;
     cursor: pointer;
 }
 
@@ -165,6 +164,10 @@ footer {
         flex-direction: column;
         align-items: flex-start;
         gap: 2rem;
+    }
+
+    main .header-text {
+        display: none;
     }
 }
           

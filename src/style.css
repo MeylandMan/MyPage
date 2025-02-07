@@ -103,7 +103,7 @@ main {
 
 }
 
-main h1 {
+.glowing-text {
     color: #ffffff;
 
     text-shadow: 
@@ -166,7 +166,10 @@ footer {
         gap: 2rem;
     }
 
-    main .header-text {
+    .glowing-text {
+        font-size: 32px;
+    }
+    main .glowing-text {
         display: none;
     }
 }

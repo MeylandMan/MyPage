@@ -23,9 +23,6 @@
             }
         }
         function updateClassBasedOnWidth() {
-            //const navElement = document.querySelector('nav');
-            const containerElement = document.querySelector('#pc');
-            const mobileElement = document.querySelector('#mobile');
             if (window.innerWidth < 1000) {
                 containerElement.classList.remove('container-pc');
                 containerElement.classList.add('container');
@@ -57,81 +54,76 @@
     
         }
         
-        window.addEventListener('load', updateClassBasedOnWidth);
-        window.addEventListener('resize', updateClassBasedOnWidth);
+        //window.addEventListener('load', updateClassBasedOnWidth);
+        //window.addEventListener('resize', updateClassBasedOnWidth);
     </script>
 </head>
 
 <body>
-    <header class="main-container">
-        <nav class="container-pc" id="pc">
-            <nav class="nav-wrap">
-                <ul class="nav-left">
-                    <li class="page-li" id="logo">
-                        <a href="index.html">
-                            <img src="LOGO-2.png" alt="Home button" width="64px">
-                        </a>
-                    </li>
-                    <li class="page-li"><a href="portofolio/index.html">Portofolio</a></li>
-                    <li class="page-li"><a href="contacts/index.html">Contacts</a></li>
-                    <li class="page-li"><a href="about/index.html">About</a></li>
-                </ul>
+    <div style="outline: none" tabindex="-1" role="group">
+        <div class="body-wrap">
+            <header>
+                <div class="container">
+                    <div class="nav-mobile">
+                        <ul class="mobile-wrap">
+                            <li class="page-li">
+                                <a href="index.html"><img src="LOGO-2.png" alt="Home button" width="64px"></a>
+                            </li>
+                            <li class="page-li">
+                                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="nav-wrap">
+                        <ul class="nav-left">
+                            <li class="page-li" id="logo">
+                                <a href="index.html">
+                                    <img src="LOGO-2.png" alt="Home button" width="64px">
+                                </a>
+                            </li>
+                            <li class="page-li"><a href="portofolio/index.html">Portofolio</a></li>
+                            <li class="page-li"><a href="contacts/index.html">Contacts</a></li>
+                            <li class="page-li"><a href="about/index.html">About</a></li>
+                        </ul>
 
+                        <ul class="nav-right">
+                            <li class="social">
+                                <a href="https://www.youtube.com/@dunno_man0" target="_blank">
+                                    <img src="youtube-logo.png" alt="Meyland's Youtube page">
+                                </a>
+                            </li>
+                            <li class="social">
+                                <a href="https://twitter.com/Dunno_man0" target="_blank">
+                                    <img src="twitter-logo.png" alt="Meyland's Twitter page">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
                 
-                <ul class="nav-right">
-                    <li class="social">
-                        <a href="https://www.youtube.com/@dunno_man0" target="_blank">
-                            <img src="youtube-logo.png" alt="Meyland's Youtube page">
-                        </a>
-                    </li>
-                    <li class="social">
-                        <a href="https://twitter.com/Dunno_man0" target="_blank">
-                            <img src="twitter-logo.png" alt="Meyland's Twitter page">
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </nav>
-
-        <nav class="container-none" id="mobile">
-            <nav class="nav-wrap">
-                <ul class="nav-main">
-                    <li class="page-li">
-                        <a href="index.html"><img src="LOGO-2.png" alt="Home button" width="64px"></a>
-                    </li>
-                    <li class="page-li">
-                        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-                    </li>
-                </ul>
         
-                <ul class="container-none" id="nav-sec">
-                    <li class="page-li"><a href="portofolio/index.html">Portofolio</a></li>
-                    <li class="page-li"><a href="contacts/index.html">Contacts</a></li>
-                    <li class="page-li"><a href="about/index.html">About</a></li>
-                </ul>
-            </nav>
-            
-        </nav>
-    </header>
-
-    <main class="main-container">
-        <canvas id="bg"></canvas>
-        <div class="header-text" aria-hidden="true"><h1>Welcome !</h1></div>
-    </main>
-
-    <footer class="main-container">
-        <div class="container">
-            <ul>
-
-            </ul>
+            <main>
+                <canvas id="bg"></canvas>
+                <div class="header-text" aria-hidden="true"><h1>Welcome !</h1></div>
+            </main>
+        
+            <footer>
+                <div class="container">
+                    <ul>
+        
+                    </ul>
+                </div>
+                <div class="email">
+                    <div class="">
+                        <span>[Mail Icon]</span>
+                        <span class="text"> If you want to<a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=m.dunooman0@gmail.com" target="_blank"> contact me</a></span>
+                    </div>
+                </div>
+            </footer>
         </div>
-        <div class="email">
-            <div class="">
-                <span>[Mail Icon]</span>
-                <span class="text"> If you want to<a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=m.dunooman0@gmail.com" target="_blank"> contact me</a></span>
-            </div>
-        </div>
-    </footer>
+    </div>
+    
 </body>
 
 </html>

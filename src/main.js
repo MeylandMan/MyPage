@@ -17,6 +17,9 @@ const renderer = new THREE.WebGLRenderer({
 	canvas: document.querySelector('#bg'),
 });
 
+renderer.setPixelRatio( window.devicePixelRatio );
+renderer.setSize(window.innerWidth, window.innerHeight);
+
 const controls = new OrbitControls( camera, renderer.domElement );
 
 
@@ -55,28 +58,33 @@ const sun = new THREE.Mesh(
 
 scene.add( sun )
 
-/*
 if(!WebGL.isWebGL2Available()) {
 
 	const warning = WebGL.getWebGL2ErrorMessage();
 	document.getElementById( 'container' ).appendChild( warning );
 
 }
-*/
 
 
 renderer.setAnimationLoop( () => {
-	
-	torus.rotation.x += 0.01
-	torus.rotation.y += 0.01
-	controls.update()
+	torus.rotation.x += 0.01;
+	torus.rotation.y += 0.01;
+	controls.update();
 
-	renderer.setPixelRatio( window.devicePixelRatio )
-	renderer.setSize( window.innerWidth, window.innerHeight);
+	
 
 	renderer.render( scene, camera );
 
 	}
 );
 
+// Re Adjust Viewport
+window.addEventListener("resize", () => {
 
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+
+	renderer.setPixelRatio( window.devicePixelRatio );
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+});

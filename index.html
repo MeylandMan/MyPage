@@ -13,13 +13,14 @@
 
         function toggleMenu() {
             toggle = !toggle;
-            const navSecondElement = document.querySelector('#nav-sec');
+            document.class
+            const wrapElement = document.querySelector('#wrap');
             if(toggle) {
-                navSecondElement.classList.remove('container-none');
-                navSecondElement.classList.add('nav-second');
+                wrapElement.classList.remove('nav-wrap');
+                wrapElement.classList.add('nav-wrap-active');
             } else {
-                navSecondElement.classList.remove('nav-second');
-                navSecondElement.classList.add('container-none');
+                wrapElement.classList.remove('nav-wrap-active');
+                wrapElement.classList.add('nav-wrap');
             }
         }
     </script>
@@ -40,7 +41,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="nav-wrap">
+                    <div class="nav-wrap" id="wrap">
                         <ul class="nav-left">
                             <li class="page-li" id="logo">
                                 <a href="index.html">
